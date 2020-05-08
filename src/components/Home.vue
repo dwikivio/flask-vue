@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <a href="https://isneverdead.pythonanywhere.com/books">lihat json</a><br>
+    <a href="http://setyadarma.pythonanywhere.com/books/">lihat json</a><br>
     <button class="primary" @click="reloadPage">Reload Page</button>
     <div class="row">
         <div class="col-lg-6">
@@ -85,7 +85,7 @@ export default {
       },
       fetchBook() {
         axios
-            .get('https://akbar-cors.herokuapp.com/https://isneverdead.pythonanywhere.com/books/')
+            .get('https://akbar-cors.herokuapp.com/http://setyadarma.pythonanywhere.com/books/')
             .then(response => {
               this.books = response.data.developers
               console.log(response)
@@ -103,7 +103,7 @@ export default {
           published: this.published,
           first_sentence: this.first_sentence
         })
-        axios.post('https://akbar-cors.herokuapp.com/https://isneverdead.pythonanywhere.com/books', data, {
+        axios.post('https://akbar-cors.herokuapp.com/http://setyadarma.pythonanywhere.com/books/', data, {
           headers: {
             'Content-Type': 'application/json',
         }
@@ -114,7 +114,7 @@ export default {
         .catch(err => {console.log(err)})
       },
       deleteBook(book) {
-        axios.delete('https://akbar-cors.herokuapp.com/https://isneverdead.pythonanywhere.com/books/'+book.id )
+        axios.delete('https://akbar-cors.herokuapp.com/https://setyadarma.pythonanywhere.com/books/'+book.id )
       this.fetchBook()
       },
 
@@ -126,7 +126,7 @@ export default {
         this.first_sentence = book.first_sentence
       }, 
       saveBook(){
-        axios.put('https://akbar-cors.herokuapp.com/https://isneverdead.pythonanywhere.com/books/'+this.id+'/', {
+        axios.put('https://akbar-cors.herokuapp.com/https://setyadarma.pythonanywhere.com/books/'+this.id+'/', {
           author: this.author,
           title: this.title,
           published: this.published,
